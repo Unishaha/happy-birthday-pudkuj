@@ -1,0 +1,378 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Jaan 💗</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Pacifico&display=swap');
+:root{--pink:#ff68b7;--purple:#a77aff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Poppins,sans-serif;color:white;min-height:100vh;background:radial-gradient(circle at 15% 20%,#612d83,transparent 35%),radial-gradient(circle at 85% 70%,#76285c,transparent 35%),linear-gradient(135deg,#10091e,#211034,#130b28);overflow-x:hidden}
+button{font-family:inherit;cursor:pointer}
+#particles{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.particle{position:absolute;bottom:-30px;animation:floatUp linear infinite;opacity:.6}
+@keyframes floatUp{to{transform:translateY(-110vh) rotate(360deg);opacity:0}}
+header{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:14px 5%;background:#140a24d9;backdrop-filter:blur(18px);border-bottom:1px solid #ffffff20}
+.logo{font-family:Pacifico,cursive;font-size:23px;color:#ff9bd0}
+.music-btn{border:1px solid #ffffff35;border-radius:30px;padding:10px 16px;color:white;background:#ffffff12}
+.layout{display:flex;position:relative;z-index:1}
+nav{width:215px;flex-shrink:0;height:calc(100vh - 65px);position:sticky;top:65px;overflow-y:auto;padding:20px 12px;background:#ffffff08;border-right:1px solid #ffffff18}
+nav button{display:block;width:100%;text-align:left;margin:5px 0;padding:12px 14px;border:1px solid transparent;border-radius:13px;color:#eadcfb;background:transparent;transition:.3s}
+nav button:hover,nav button.active{background:linear-gradient(100deg,#ff69b744,#a67aff44);border-color:#ff9bd066;transform:translateX(5px)}
+main{flex:1;min-width:0;padding:30px;max-width:1250px;margin:auto}
+.page{display:none;animation:pageIn .65s ease}
+.page.active{display:block}
+@keyframes pageIn{from{opacity:0;transform:translateY(22px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.hero{text-align:center;padding:55px 10px 40px}
+h1{font-size:clamp(34px,6vw,65px);line-height:1.2}
+.gradient{background:linear-gradient(90deg,#ff8ac7,#d1a4ff,#fff);-webkit-background-clip:text;color:transparent}
+.subtitle{color:#e4cce9;margin-top:14px}
+.script{font-family:Pacifico,cursive;color:#ff9bd0}
+.card{background:#ffffff0f;border:1px solid #ffffff25;border-radius:24px;padding:25px;box-shadow:0 15px 50px #0004,inset 0 1px #ffffff12;backdrop-filter:blur(15px);margin-bottom:22px;transition:.35s}
+.card:hover{transform:translateY(-4px);box-shadow:0 20px 55px #e45ca622}
+h2{font-size:27px;margin-bottom:12px}
+h3{margin-bottom:10px}
+p{line-height:1.8;color:#f0dff5}
+.btn{border:0;border-radius:30px;padding:12px 23px;color:white;font-weight:700;background:linear-gradient(100deg,#ff5eae,#9c6bff);box-shadow:0 7px 24px #d45cbd55;transition:.25s;margin:7px 4px}
+.btn:hover{transform:translateY(-3px) scale(1.04);filter:brightness(1.15)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.secondary{background:#ffffff18;border:1px solid #ffffff40;box-shadow:none}
+.center{text-align:center}
+.result{min-height:65px;margin:20px auto;padding:17px;border-radius:17px;background:#ffffff10;border:1px solid #ffffff25;text-align:center}
+.reveal{animation:reveal .8s cubic-bezier(.2,1.5,.5,1)}
+@keyframes reveal{0%{opacity:0;transform:scale(.2) rotate(-15deg)}70%{transform:scale(1.15) rotate(4deg)}100%{opacity:1;transform:scale(1) rotate(0)}}
+.wheel-wrap{display:flex;justify-content:center;align-items:center;padding:20px;position:relative}
+.wheel{width:min(310px,75vw);aspect-ratio:1;border-radius:50%;border:9px solid #ffd5f1;background:conic-gradient(#ff6db6 0 45deg,#a67bff 45deg 90deg,#ff9acb 90deg 135deg,#7954ce 135deg 180deg,#ff6db6 180deg 225deg,#a67bff 225deg 270deg,#ff9acb 270deg 315deg,#7954ce 315deg 360deg);box-shadow:0 0 25px #ff8bc8,0 0 70px #a67bff66;position:relative;transition:transform 5s cubic-bezier(.12,.75,.15,1)}
+.wheel span{position:absolute;left:50%;top:50%;transform:rotate(var(--a)) translateY(-115px) rotate(calc(-1 * var(--a)));font-size:24px}
+.pointer{font-size:36px;position:absolute;top:5px;left:50%;transform:translateX(-50%);z-index:2}
+.wheel-center{position:absolute;inset:39%;border-radius:50%;background:#fff;color:#a44baf;display:grid;place-items:center;font-weight:800}
+.cake-scene{height:310px;display:grid;place-items:center;perspective:700px}
+.cake{position:relative;width:230px;height:180px;animation:cakeFloat 3s ease-in-out infinite}
+@keyframes cakeFloat{50%{transform:translateY(-9px) rotateX(3deg)}}
+.cake-top{position:absolute;top:48px;left:10px;width:210px;height:48px;border-radius:50%;background:linear-gradient(#fff0fa,#ff9ecf);border:4px solid #ffd4ed;z-index:4}
+.cake-layer{position:absolute;left:10px;top:70px;width:210px;height:90px;background:linear-gradient(90deg,#e75d9d,#ffb0d8,#d84992);border-radius:0 0 22px 22px;box-shadow:inset -13px 0 #a92e72,inset 8px 0 #ffcae8}
+.cake-layer:before{content:"";position:absolute;top:0;left:0;width:100%;height:25px;background:#fff0fa;border-radius:50%}
+.candle{position:absolute;z-index:5;top:3px;left:105px;width:13px;height:52px;border-radius:5px;background:repeating-linear-gradient(45deg,#fff 0 6px,#ff6eb7 6px 12px)}
+.flame{position:absolute;top:-24px;left:-3px;width:19px;height:26px;border-radius:60% 40% 55% 45%;background:linear-gradient(#fff,#ffe56b,#ff7a23);box-shadow:0 0 18px #ffb52e;animation:flicker .3s infinite alternate}
+@keyframes flicker{to{transform:scale(.8) rotate(8deg)}}
+.cake.off .flame{display:none}
+.teddy-stage{height:320px;display:grid;place-items:center;position:relative;overflow:hidden}
+.teddy{font-size:105px;filter:drop-shadow(0 10px 10px #0005);transition:.7s}
+.teddy.part{animation:partFly 1.3s ease both}
+@keyframes partFly{0%{transform:translateY(90px) rotate(90deg) scale(.2);opacity:0}70%{transform:translateY(0) rotate(-10deg) scale(1.2);opacity:1}100%{transform:translateY(0) rotate(0) scale(1)}}
+.teddy.complete{animation:teddyDance 1s ease-in-out 2}
+@keyframes teddyDance{25%{transform:rotate(-12deg) scale(1.15)}75%{transform:rotate(12deg) scale(1.15)}}
+#fireCanvas{width:100%;height:350px;background:#100b25;border-radius:20px;display:block}
+.mascot{position:fixed;right:16px;bottom:15px;z-index:8;display:flex;align-items:end;gap:8px;pointer-events:none}
+.anime{width:82px;height:105px;position:relative;animation:mascotFloat 3s infinite ease-in-out}
+@keyframes mascotFloat{50%{transform:translateY(-8px)}}
+.anime .head{position:absolute;top:5px;left:13px;width:57px;height:59px;background:#ffe0d1;border-radius:48%;border:3px solid #f6b6c8}
+.anime .hair{position:absolute;top:0;left:9px;width:64px;height:37px;border-radius:50% 50% 20% 20%;background:#57345b;z-index:2}
+.anime .hair:after{content:"";position:absolute;right:-4px;top:19px;width:22px;height:45px;background:#57345b;border-radius:50%}
+.anime .eye{position:absolute;top:30px;left:26px;z-index:3;color:#6d3a75;font-size:13px;letter-spacing:9px}
+.anime .blush{position:absolute;top:44px;left:19px;z-index:3;color:#fa8cae;font-size:12px}
+.anime .body{position:absolute;bottom:0;left:17px;width:51px;height:43px;border-radius:20px 20px 8px 8px;background:linear-gradient(120deg,#ff8dc4,#b18aff)}
+.speech{max-width:180px;padding:11px 14px;border-radius:16px 16px 3px 16px;background:#fff;color:#a34485;font-size:11px;font-weight:800;box-shadow:0 5px 20px #0004;margin-bottom:55px;animation:speechPop 2.8s infinite}
+@keyframes speechPop{50%{transform:translateY(-5px)}}
+footer{text-align:center;padding:40px;color:#cbb1db}
+@media(max-width:760px){.layout{display:block}nav{width:100%;height:auto;position:sticky;top:64px;display:flex;overflow-x:auto;padding:8px;background:#211333ee}nav button{width:auto;white-space:nowrap;margin:3px;padding:9px 13px}main{padding:17px}.mascot{transform:scale(.8);transform-origin:bottom right}.speech{max-width:140px}}
+</style>
+</head>
+<body>
+<div id="particles"></div>
+<header>
+<div class="logo">For My Jaan 💗</div>
+<button class="music-btn" id="musicButton" onclick="toggleMusic()">🎵 Play English Song</button>
+</header>
+
+<div class="layout">
+<nav>
+<button class="active" onclick="showPage('home',this)">🏠 Home</button>
+<button onclick="showPage('wheel',this)">🎡 Lucky Wheel</button>
+<button onclick="showPage('fireworks',this)">🎆 Fireworks</button>
+<button onclick="showPage('teddy',this)">🧸 Teddy Game</button>
+<button onclick="showPage('cake',this)">🎂 Magic Cake</button>
+<button onclick="showPage('love',this)">💌 Love Letter</button>
+</nav>
+<main>
+
+<section class="page active" id="home">
+<div class="hero">
+<div class="script">A little universe made for you</div>
+<h1 class="gradient">Happy Birthday<br>My Jaan! 💗</h1>
+<p class="subtitle">You make every little moment magical.</p>
+<div style="font-size:45px;margin:25px">🌸 💗 🌷</div>
+<button class="btn" onclick="showPage('wheel',document.querySelectorAll('nav button')[1])">Discover Your Surprise ✨</button>
+</div>
+<div class="card center"><h2>Made with Love 💗</h2><p>A special little world created just for you.</p></div>
+</section>
+
+<section class="page" id="wheel">
+<div class="hero"><h1 class="gradient">The Magic Wheel 🎡</h1><p class="subtitle">Spin and discover your special surprise!</p></div>
+<div class="card center">
+<div class="wheel-wrap"><div class="pointer">▼</div>
+<div class="wheel" id="wheelGraphic">
+<span style="--a:22.5deg">💗</span><span style="--a:67.5deg">🎁</span><span style="--a:112.5deg">🌸</span><span style="--a:157.5deg">🧸</span><span style="--a:202.5deg">💌</span><span style="--a:247.5deg">✨</span><span style="--a:292.5deg">🎂</span><span style="--a:337.5deg">💎</span>
+<div class="wheel-center">SPIN</div></div></div>
+<button class="btn" id="spinButton" onclick="spinWheel()">SPIN YOUR SURPRISE 💗</button>
+<div class="result" id="wheelResult">Your surprise is waiting...</div>
+<div id="wheelGift" style="font-size:65px;min-height:80px"></div>
+<button class="btn secondary" onclick="resetWheel()">Spin Again</button>
+</div></section>
+
+<section class="page" id="fireworks">
+<div class="hero"><h1 class="gradient">A Sky Full of Wishes 🎆</h1><p class="subtitle">Let's light up your birthday sky!</p></div>
+<div class="card center"><canvas id="fireCanvas"></canvas>
+<button class="btn" onclick="launchShow()">Launch Fireworks 🎆</button>
+<button class="btn secondary" onclick="stopFireworks()">Stop Show</button>
+<p id="fireMessage">Every sparkle is a little birthday wish for you.</p></div>
+</section>
+
+<section class="page" id="teddy">
+<div class="hero"><h1 class="gradient">Build Your Teddy 🧸</h1><p class="subtitle">Put the little pieces together to reveal a special friend.</p></div>
+<div class="card center"><div class="teddy-stage"><div class="teddy" id="teddyFigure">🧸</div></div>
+<h2 id="teddyTitle">Your teddy is waiting!</h2>
+<p id="teddyText">Tap the button to assemble your cute new teddy.</p>
+<button class="btn" id="teddyButton" onclick="buildTeddy()">Assemble Teddy 💗</button>
+<button class="btn secondary" onclick="resetTeddy()">Reset</button></div>
+</section>
+
+<section class="page" id="cake">
+<div class="hero"><h1 class="gradient">Your Magical Cake 🎂</h1><p class="subtitle">Make a wish, birthday princess!</p></div>
+<div class="card center"><div class="cake-scene"><div class="cake" id="cake">
+<div class="candle"><div class="flame"></div></div><div class="cake-top"></div><div class="cake-layer"></div></div></div>
+<h2 id="cakeMessage">A beautiful cake just for you! 💗</h2>
+<button class="btn" onclick="blowCandles()">Blow Out Candles 🌬️</button>
+<button class="btn secondary" onclick="relightCake()">Light Again ✨</button>
+<div class="result" id="cakeResult">Close your eyes and make a wish!</div></div>
+</section>
+
+<section class="page" id="love">
+<div class="hero"><h1 class="gradient">A Letter for You 💌</h1><p class="subtitle">A few words from the heart.</p></div>
+<div class="card"><h2 class="script">To my Jaan, 💗</h2>
+<p>Happy Birthday, my special person! I hope your day is full of smiles, laughter, beautiful surprises, and moments that make your heart happy.<br><br>
+You deserve kindness, happiness, peaceful days, and dreams that come true. Never forget how special you are and how much joy you bring into the lives of the people around you.<br><br>
+May this new chapter bring you countless reasons to smile. Keep shining, keep dreaming, and keep being your wonderful self.<br><br>
+I hope this little website makes your birthday a little more magical. Every part of it was made to bring you a smile.<br><br>
+<span class="script">I love you, Bachu! Happy Birthday! 💗</span></p></div>
+</section>
+<footer>Made with endless birthday wishes 💗</footer>
+</main></div>
+
+<div class="mascot"><div class="speech">I LOVE YOU BACHU! 💗<br>HAPPY BIRTHDAY! 🎂</div>
+<div class="anime"><div class="hair"></div><div class="head"></div><div class="eye">● ●</div><div class="blush">●　●</div><div class="body"></div></div></div>
+
+<!-- Online English singing music stream -->
+<audio id="bgMusic" preload="none" loop crossorigin="anonymous"></audio>
+
+<script>
+/*
+  Music source:
+  This is an online radio stream, not a specific copyrighted song.
+  It requires an internet connection and may change or become unavailable.
+*/
+const MUSIC_STREAM="https://stream.zeno.fm/0r0xa792kwzuv";
+const music=document.getElementById('bgMusic');
+const musicButton=document.getElementById('musicButton');
+let musicStarted=false;
+music.src=MUSIC_STREAM;
+
+async function startMusic(){
+  try{
+    await music.play();
+    musicStarted=true;
+    musicButton.textContent='⏸ Pause English Music';
+  }catch(error){
+    musicButton.textContent='🎵 Tap to Play English Music';
+  }
+}
+function toggleMusic(){
+  if(music.paused)startMusic();
+  else{music.pause();musicButton.textContent='🎵 Play English Music';}
+}
+music.addEventListener('error',()=>musicButton.textContent='🎵 Music stream unavailable');
+document.addEventListener('pointerdown',()=>{
+  if(!musicStarted && music.paused)startMusic();
+},{once:true});
+
+/* Navigation */
+function showPage(id,button){
+ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+ if(button)button.classList.add('active');
+ if(id==='fireworks')resizeFireCanvas();
+}
+
+/* Floating particles */
+const particleBox=document.getElementById('particles');
+for(let i=0;i<35;i++){
+ const p=document.createElement('div');p.className='particle';
+ p.textContent=['💗','✨','🌸','♡'][i%4];
+ p.style.left=Math.random()*100+'%';
+ p.style.animationDuration=(7+Math.random()*12)+'s';
+ p.style.animationDelay=(-Math.random()*15)+'s';
+ p.style.fontSize=(12+Math.random()*15)+'px';
+ particleBox.appendChild(p);
+}
+
+/* Sound effects */
+let audioCtx;
+function soundContext(){
+ if(!audioCtx)audioCtx=new(window.AudioContext||window.webkitAudioContext)();
+ if(audioCtx.state==='suspended')audioCtx.resume();
+ return audioCtx;
+}
+function tone(freq,duration,type='sine',volume=.08){
+ const c=soundContext(),o=c.createOscillator(),g=c.createGain();
+ o.type=type;o.frequency.value=freq;
+ g.gain.setValueAtTime(volume,c.currentTime);
+ g.gain.exponentialRampToValueAtTime(.001,c.currentTime+duration);
+ o.connect(g);g.connect(c.destination);o.start();o.stop(c.currentTime+duration);
+}
+function sparkleSound(){
+ [660,880,1100,1320].forEach((f,i)=>setTimeout(()=>tone(f,.22,'sine',.055),i*100));
+}
+function fireworkSound(){
+ const c=soundContext(),length=c.sampleRate;
+ const buffer=c.createBuffer(1,length,c.sampleRate),data=buffer.getChannelData(0);
+ for(let i=0;i<length;i++)data[i]=(Math.random()*2-1)*Math.pow(1-i/length,2);
+ const source=c.createBufferSource(),filter=c.createBiquadFilter(),gain=c.createGain();
+ filter.type='lowpass';filter.frequency.value=1400;
+ gain.gain.setValueAtTime(.5,c.currentTime);
+ gain.gain.exponentialRampToValueAtTime(.001,c.currentTime+1);
+ source.buffer=buffer;source.connect(filter);filter.connect(gain);gain.connect(c.destination);
+ source.start();tone(95,.5,'sine',.12);
+}
+
+/* Wheel */
+const prizes=[
+ {name:'A thousand hugs!',emoji:'🤗'},{name:'A magical teddy!',emoji:'🧸'},
+ {name:'A beautiful wish!',emoji:'🌸'},{name:'A special love letter!',emoji:'💌'},
+ {name:'A birthday cake!',emoji:'🎂'},{name:'A box of happiness!',emoji:'🎁'},
+ {name:'A sky full of stars!',emoji:'✨'},{name:'A diamond of love!',emoji:'💎'}
+];
+let spinning=false,rotation=0;
+function spinWheel(){
+ if(spinning)return;
+ spinning=true;document.getElementById('spinButton').disabled=true;
+ document.getElementById('wheelResult').textContent='The magic is choosing your surprise...';
+ document.getElementById('wheelGift').textContent='✨';
+ const index=Math.floor(Math.random()*prizes.length),slice=360/prizes.length;
+ rotation+=360*6+(360-(index*slice+slice/2));
+ document.getElementById('wheelGraphic').style.transform=`rotate(${rotation}deg)`;
+ tone(450,.2);
+ setTimeout(()=>{
+  const prize=prizes[index];
+  document.getElementById('wheelResult').innerHTML='<strong>YOUR SURPRISE IS...</strong><br>'+prize.name;
+  const gift=document.getElementById('wheelGift');gift.textContent=prize.emoji;
+  gift.classList.remove('reveal');void gift.offsetWidth;gift.classList.add('reveal');
+  sparkleSound();confetti();spinning=false;
+  document.getElementById('spinButton').disabled=false;
+ },5100);
+}
+function resetWheel(){
+ if(spinning)return;
+ rotation=0;
+ const w=document.getElementById('wheelGraphic');
+ w.style.transition='none';w.style.transform='rotate(0deg)';
+ setTimeout(()=>w.style.transition='',30);
+ document.getElementById('wheelResult').textContent='Your surprise is waiting...';
+ document.getElementById('wheelGift').textContent='';
+}
+
+/* Confetti */
+function confetti(){
+ for(let i=0;i<65;i++){
+  const el=document.createElement('div');el.textContent=['💗','✨','🌸','🎀','⭐'][i%5];
+  Object.assign(el.style,{position:'fixed',zIndex:20,left:Math.random()*100+'vw',top:'-25px',pointerEvents:'none',fontSize:(14+Math.random()*18)+'px'});
+  document.body.appendChild(el);
+  const anim=el.animate([{transform:'translate(0,0) rotate(0deg)',opacity:1},{transform:`translate(${(Math.random()-.5)*250}px,105vh) rotate(${Math.random()*700}deg)`,opacity:0}],{duration:1800+Math.random()*1700,easing:'ease-in'});
+  anim.onfinish=()=>el.remove();
+ }
+}
+
+/* Teddy */
+let teddyBuilt=false;
+function buildTeddy(){
+ if(teddyBuilt)return;teddyBuilt=true;
+ const figure=document.getElementById('teddyFigure');
+ const button=document.getElementById('teddyButton');
+ button.disabled=true;
+ document.getElementById('teddyTitle').textContent='Building your special teddy...';
+ document.getElementById('teddyText').textContent='The little pieces are coming together!';
+ figure.classList.remove('complete');figure.classList.add('part');sparkleSound();
+ setTimeout(()=>{
+  figure.classList.remove('part');void figure.offsetWidth;figure.classList.add('complete');
+  document.getElementById('teddyTitle').textContent='Meet your new teddy! 🧸';
+  document.getElementById('teddyText').textContent='A new little friend made especially for your birthday!';
+  button.disabled=false;button.textContent='Teddy Completed! 💗';
+  confetti();sparkleSound();
+ },1500);
+}
+function resetTeddy(){
+ teddyBuilt=false;
+ const f=document.getElementById('teddyFigure');f.className='teddy';f.textContent='🧸';
+ document.getElementById('teddyTitle').textContent='Your teddy is waiting!';
+ document.getElementById('teddyText').textContent='Tap the button to assemble your cute new teddy.';
+ const b=document.getElementById('teddyButton');b.disabled=false;b.textContent='Assemble Teddy 💗';
+}
+
+/* Cake */
+function blowCandles(){
+ document.getElementById('cake').classList.add('off');
+ document.getElementById('cakeMessage').textContent='Your wish is on its way! 💗';
+ document.getElementById('cakeResult').textContent='Happy Birthday! May all your beautiful wishes come true! 🌟';
+ tone(500,.5);confetti();
+}
+function relightCake(){
+ document.getElementById('cake').classList.remove('off');
+ document.getElementById('cakeMessage').textContent='A beautiful cake just for you! 💗';
+ document.getElementById('cakeResult').textContent='Close your eyes and make a wish!';
+ sparkleSound();
+}
+
+/* Fireworks */
+const canvas=document.getElementById('fireCanvas'),ctx=canvas.getContext('2d');
+let particles=[],fireTimer=null,fireActive=false;
+function resizeFireCanvas(){
+ const rect=canvas.getBoundingClientRect(),dpr=Math.min(devicePixelRatio||1,2);
+ canvas.width=rect.width*dpr;canvas.height=rect.height*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+}
+window.addEventListener('resize',resizeFireCanvas);resizeFireCanvas();
+function explode(x,y){
+ const colors=['#ff70c4','#b58cff','#ffe58a','#8beaff','#ff9e8b'],color=colors[Math.floor(Math.random()*colors.length)];
+ for(let i=0;i<65;i++){
+  const a=Math.random()*Math.PI*2,s=1.3+Math.random()*4.3;
+  particles.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,life:1,decay:.008+Math.random()*.012,color,size:1.5+Math.random()*2.8});
+ }
+ fireworkSound();
+}
+function launchShow(){
+ soundContext();if(fireActive)return;fireActive=true;
+ document.getElementById('fireMessage').textContent='Look at your beautiful birthday sky! 💗';
+ explode(canvas.clientWidth/2,canvas.clientHeight/3);
+ fireTimer=setInterval(()=>explode(40+Math.random()*(canvas.clientWidth-80),30+Math.random()*(canvas.clientHeight*.65)),700);
+ setTimeout(stopFireworks,12000);
+}
+function stopFireworks(){
+ fireActive=false;clearInterval(fireTimer);fireTimer=null;
+ document.getElementById('fireMessage').textContent='Every sparkle is a little birthday wish for you.';
+}
+function animateFireworks(){
+ const w=canvas.clientWidth,h=canvas.clientHeight;
+ ctx.fillStyle='rgba(16,11,37,.22)';ctx.fillRect(0,0,w,h);
+ for(let i=particles.length-1;i>=0;i--){
+  const p=particles[i];p.x+=p.vx;p.y+=p.vy;p.vx*=.985;p.vy=p.vy*.985+.035;p.life-=p.decay;
+  ctx.globalAlpha=Math.max(0,p.life);ctx.fillStyle=p.color;
+  ctx.beginPath();ctx.arc(p.x,p.y,p.size,0,Math.PI*2);ctx.fill();
+  if(p.life<=0)particles.splice(i,1);
+ }
+ ctx.globalAlpha=1;requestAnimationFrame(animateFireworks);
+}
+animateFireworks();
+</script>
+</body>
+</html>
